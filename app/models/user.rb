@@ -5,4 +5,11 @@ class User < ApplicationRecord
     has_many :genres, through: :genre_likes
 
     has_secure_password
+
+    def users_liked_genres
+        self.genres.map do |genre|
+            genre.genre
+        end
+    end
+
 end

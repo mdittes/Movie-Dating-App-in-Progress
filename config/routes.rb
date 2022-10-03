@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   
-  resources :matches
+  resources :matches, only: [:index, :show, :create, :destroy]
   resources :genre_likes
-  resources :genres
+  resources :genres, only: [:index, :show]
   resources :users
 
   get "/me", to: "users#show"
+  post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
   # Routing logic: fallback requests for React Router.
