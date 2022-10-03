@@ -1,0 +1,2 @@
+class GenreLikesController < ApplicationController
+end

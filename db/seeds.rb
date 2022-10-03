@@ -1,7 +1,101 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+puts "Seeding the stuff..."
+
+User.destroy_all 
+Genre.destroy_all 
+GenreLike.destroy_all
+Match.destroy_all
+
+User.create!(name: "Allen", image_url: "", bio: "", password_digest: "123")
+User.create!(name: "Amanda", image_url: "", bio: "", password_digest: "456")
+User.create!(name: "Antonio", image_url: "", bio: "", password_digest: "789")
+User.create!(name: "Brandon", image_url: "", bio: "", password_digest: "012")
+User.create!(name: "Carlos", image_url: "", bio: "", password_digest: "013")
+User.create!(name: "Dana", image_url: "", bio: "", password_digest: "014")
+User.create!(name: "Danny", image_url: "", bio: "", password_digest: "015")
+User.create!(name: "George", image_url: "", bio: "", password_digest: "016")
+User.create!(name: "Jeff", image_url: "", bio: "", password_digest: "017")
+User.create!(name: "Karl", image_url: "", bio: "", password_digest: "018")
+User.create!(name: "Kevin", image_url: "", bio: "", password_digest: "019")
+User.create!(name: "Lari", image_url: "", bio: "", password_digest: "020")
+User.create!(name: "Liz", image_url: "", bio: "", password_digest: "021")
+User.create!(name: "Marcus", image_url: "", bio: "", password_digest: "022")
+User.create!(name: "Matt", image_url: "", bio: "", password_digest: "023")
+User.create!(name: "Nathan", image_url: "", bio: "", password_digest: "024")
+User.create!(name: "Rachel", image_url: "", bio: "", password_digest: "025")
+User.create!(name: "Shane", image_url: "", bio: "", password_digest: "026")
+User.create!(name: "Sky", image_url: "", bio: "", password_digest: "027")
+User.create!(name: "Thierry", image_url: "", bio: "", password_digest: "028")
+User.create!(name: "Tommy", image_url: "", bio: "", password_digest: "029")
+User.create!(name: "Tsering", image_url: "", bio: "", password_digest: "030")
+User.create!(name: "Zak", image_url: "", bio: "", password_digest: "031")
+
+Genre.create(genre: "Action")
+Genre.create(genre: "Classic")
+Genre.create(genre: "Comedy")
+Genre.create(genre: "Documentary")
+Genre.create(genre: "Drama")
+Genre.create(genre: "Horror")
+Genre.create(genre: "International")
+Genre.create(genre: "Romance")
+Genre.create(genre: "Science Fiction")
+Genre.create(genre: "Thriller")
+
+GenreLike.create(user_id: 1, genre_id: 1)
+GenreLike.create(user_id: 1, genre_id: 2)
+GenreLike.create(user_id: 2, genre_id: 3)
+GenreLike.create(user_id: 2, genre_id: 4)
+GenreLike.create(user_id: 2, genre_id: 5)
+GenreLike.create(user_id: 3, genre_id: 6)
+GenreLike.create(user_id: 3, genre_id: 7)
+GenreLike.create(user_id: 4, genre_id: 8)
+GenreLike.create(user_id: 4, genre_id: 9)
+GenreLike.create(user_id: 5, genre_id: 10)
+GenreLike.create(user_id: 5, genre_id: 1)
+GenreLike.create(user_id: 6, genre_id: 2)
+GenreLike.create(user_id: 6, genre_id: 3)
+GenreLike.create(user_id: 7, genre_id: 4)
+GenreLike.create(user_id: 7, genre_id: 8)
+GenreLike.create(user_id: 8, genre_id: 7)
+GenreLike.create(user_id: 8, genre_id: 6)
+GenreLike.create(user_id: 9, genre_id: 6)
+GenreLike.create(user_id: 9, genre_id: 8)
+GenreLike.create(user_id: 9, genre_id: 10)
+GenreLike.create(user_id: 10, genre_id: 9)
+GenreLike.create(user_id: 10, genre_id: 2)
+GenreLike.create(user_id: 11, genre_id: 1)
+GenreLike.create(user_id: 11, genre_id: 4)
+GenreLike.create(user_id: 12, genre_id: 4)
+GenreLike.create(user_id: 12, genre_id: 1)
+GenreLike.create(user_id: 13, genre_id: 8)
+GenreLike.create(user_id: 13, genre_id: 7)
+GenreLike.create(user_id: 14, genre_id: 10)
+GenreLike.create(user_id: 14, genre_id: 1)
+GenreLike.create(user_id: 15, genre_id: 2)
+GenreLike.create(user_id: 15, genre_id: 3)
+GenreLike.create(user_id: 16, genre_id: 4)
+GenreLike.create(user_id: 16, genre_id: 6)
+GenreLike.create(user_id: 17, genre_id: 6)
+GenreLike.create(user_id: 17, genre_id: 8)
+GenreLike.create(user_id: 18, genre_id: 10)
+GenreLike.create(user_id: 18, genre_id: 2)
+GenreLike.create(user_id: 19, genre_id: 3)
+GenreLike.create(user_id: 19, genre_id: 5)
+GenreLike.create(user_id: 20, genre_id: 5)
+GenreLike.create(user_id: 20, genre_id: 8)
+GenreLike.create(user_id: 21, genre_id: 7)
+GenreLike.create(user_id: 21, genre_id: 1)
+GenreLike.create(user_id: 22, genre_id: 10)
+GenreLike.create(user_id: 22, genre_id: 9)
+GenreLike.create(user_id: 23, genre_id: 6)
+GenreLike.create(user_id: 23, genre_id: 5)
+
+Match.create(user_id: 1, liked_user_id: 5)
+Match.create(user_id: 2, liked_user_id: 11)
+Match.create(user_id: 3, liked_user_id: 23)
+Match.create(user_id: 4, liked_user_id: 7)
+Match.create(user_id: 5, liked_user_id: 9)
+
+
+puts "Done seeding the stuff!"
+
+
