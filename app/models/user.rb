@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-    has_many :matches 
-    has_many :genre_likes
+    has_many :matches, dependent: :destroy
+    has_many :genre_likes, dependent: :destroy
     has_many :liked_users, through: :matches
     has_many :genres, through: :genre_likes
 
