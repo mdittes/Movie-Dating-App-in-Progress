@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
     has_secure_password
 
+    
+
     def users_liked_genres
         self.genres.map do |genre|
             genre.genre

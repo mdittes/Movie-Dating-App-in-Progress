@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
+    before_action :authorize
 
-    def index 
-        render json: User.all
-    end
+    # def index 
+    #     render json: User.all
+    # end
 
     def show 
         user = User.find_by(id: session[:user_id])
@@ -22,10 +23,26 @@ class UsersController < ApplicationController
         end
     end
 
+    def update 
+        user = User.find_by(id: params[:id])
+        user.update!(user_params)
+        render json: user
+    end 
+
+    def destroy
+        user = User.find_by(id: params[:id])
+        user.destroy
+        head :no_content
+    end
+
     private
 
     def user_params
         params.permit(:name, :image_url, :bio, :password, :password_confirmation)
+    end
+
+    def authorize
+        return render json: {error: "Not authorized"}, status: :unauthorized unless session.include? :user_id
     end
 
 end
