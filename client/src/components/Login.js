@@ -14,9 +14,9 @@ function Login() {
             <div className="Auth-form-content">
               <h3 className="Auth-form-title">Sign In</h3>
               <div className="form-group mt-3">
-                <label>Email address</label>
+                <label>Username</label>
                 <input
-                  type="email"
+                  type="name"
                   className="form-control mt-1"
                   placeholder="Name"
                 />
@@ -30,9 +30,7 @@ function Login() {
                 />
               </div>
               <div className="d-grid gap-2 mt-3">
-                <button style={{backgroundColor: "#529F8C", color: "#F6C6BF" }} type="submit">
-                  Submit
-                </button>
+              <button class="btn btn-default" style={{backgroundColor: "#529F8C", color: "#F6C6BF" }} type="submit" >Submit</button>
               </div>
               <p className="text-center mt-2">
                 Forgot <a href="#">password?</a>

@@ -2,108 +2,56 @@ import React from 'react'
 import { useState } from "react"
 
 function Home() {
-  let [authMode, setAuthMode] = useState("signin")
-
-  const changeAuthMode = () => {
-    setAuthMode(authMode === "signin" ? "signup" : "signin")
-  }
-
-  if (authMode === "signin") {
-    return (
-      <div className="Auth-form-container">
-        <form className="Auth-form">
-          <div className="Auth-form-content">
-            <h3 className="Auth-form-title">Sign In</h3>
-            <div className="text-center">
-              Not registered yet?{" "}
-              <span className="link-primary" style={{cursor:'pointer'}} onClick={changeAuthMode}>
-                Sign Up
-              </span>
-            </div>
-            <div className="form-group mt-3">
-              <label>Email address</label>
-              <input
-                type="email"
-                className="form-control mt-1"
-                placeholder="Name"
-              />
-            </div>
-            <div className="form-group mt-3">
-              <label>Password</label>
-              <input
-                type="password"
-                className="form-control mt-1"
-                placeholder="Enter password"
-              />
-            </div>
-            <div className="d-grid gap-2 mt-3">
-              <button style={{backgroundColor: "#529F8C", color: "#F6C6BF" }} type="submit">
-                Submit
-              </button>
-            </div>
-            <p className="text-center mt-2">
-              Forgot <a href="#">password?</a>
-            </p>
-          </div>
-        </form>
-      </div>
-    )
-  }
-
   return (
-    <div className="Auth-form-container">
-      <form className="Auth-form">
-        <div className="Auth-form-content">
-          <h3 className="Auth-form-title">Sign In</h3>
-          <div className="text-center">
-            Already registered?{" "}
-            <span style={{cursor:'pointer'}} className="link-primary" onClick={changeAuthMode}>
-              Sign In
-            </span>
+      <section class="h-100 gradient-form" background-color="#eee;">
+      <div class="container py-5 h-100" >
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-xl-10">
+            <div class="card rounded-3 text-black">
+              <div class="row g-0">
+                <div class="col-lg-6" style={{backgroundColor: "#529F8C" }}>
+                  <div class="card-body p-md-5 mx-md-4" style={{backgroundColor: "#529F8C", color: "#F6C6BF" }}>
+                    <div class="text-center">
+                      <img src="https://i.imgur.com/6hzdhTQ.jpg" width="250px" alt="logo"/>
+                    </div>
+                    <form>
+                      <p>Please login to your account</p>
+                      <div class="form-outline mb-4">
+                        <input type="email" id="form2Example11" class="form-control"
+                          placeholder="Username" />
+                        <label class="form-label" for="form2Example11" style={{color: "#F6C6BF"}}>Username</label>
+                      </div>
+                      <div class="form-outline mb-4">
+                        <input type="password" id="form2Example22" class="form-control" placeholder="Password"/>
+                        <label class="form-label" for="form2Example22" style={{color: "#F6C6BF"}} >Password</label>
+                      </div>
+                      <div class="text-center pt-1 mb-5 pb-1">
+                      <button class="btn btn-default" style={{backgroundColor: "#F6C6BF", color: "#529F8C" }} type="submit" >Log In</button>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-center pb-4">
+                        {/* <p class="mb-0 me-2">Don't have an account?</p> */}
+                        <button type="button" class="btn btn-default" style={{backgroundColor: "#F6C6BF", color: "#529F8C" }} >Create Account</button>
+                      </div>
+
+                    </form>
+
+                  </div>
+                </div>
+                <div class="col-lg-6 d-flex align-items-center gradient-custom-2" style={{backgroundColor: "#F6C6BF"}}>
+                  <div class="text-black px-3 py-4 p-md-5 mx-md-4">
+                    <h4 class="mb-4" style={{textAlignVertical: "center",textAlign: "center"}} >Welcome to Reel Connections</h4>
+                    <p class="small mb-0" style={{textAlignVertical: "center",textAlign: "center"}} >Here at Reel Connections, we're here to help you find a partner to watch movies with!
+                    If you need someone to snuggle up with during those cozy Hallmark Christmas movies, or someone to share in your
+                    pain as Michale Myers someone keeps finding was to come back and kill some more, check us out! We're here to help
+                    you find your forever movie watching soulmate!  </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="form-group mt-3">
-            <label>Full Name</label>
-            <input
-              type="name"
-              className="form-control mt-1"
-              placeholder="Name"
-            />
-          </div>
-          <div className="form-group mt-3">
-            <label>Password</label>
-            <input
-              type="password"
-              className="form-control mt-1"
-              placeholder="Password"
-            />
-          </div>
-          <div className="form-group mt-3">
-            <label>Profile Picture</label>
-            <input
-              type="photo"
-              className="form-control mt-1"
-              placeholder="Upload Image URL Here"
-            />
-          </div>
-          <div className="form-group mt-3">
-            <label>Bio</label>
-            <input
-              type="bio"
-              className="form-control mt-1"
-              placeholder="Tell us about yourself"
-            />
-          </div>
-          <div className="d-grid gap-2 mt-3">
-            <button type="submit" style={{backgroundColor: "#529F8C", color: "#F6C6BF" }}>
-              Submit
-            </button>
-          </div>
-          <p className="text-center mt-2">
-            Forgot <a href="#">password?</a>
-          </p>
         </div>
-      </form>
-    </div>
+      </div>
+    </section>
   )
 }
 
