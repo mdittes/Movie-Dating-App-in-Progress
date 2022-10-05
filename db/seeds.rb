@@ -1,7 +1,101 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+puts "Seeding the stuff..."
+
+User.destroy_all 
+Genre.destroy_all 
+GenreLike.destroy_all
+Match.destroy_all
+
+User.create!(name: "Allen", image_url: "https://ca.slack-edge.com/T02MD9XTF-U03KQ9MHUAZ-f2fdc34a5008-512", bio: "", password_digest: "123")
+User.create!(name: "Amanda", image_url: "https://ca.slack-edge.com/T02MD9XTF-U03NXE52117-475715aae44a-512", bio: "", password_digest: "456")
+User.create!(name: "Antonio", image_url: "https://ca.slack-edge.com/T02MD9XTF-U03M8V9P049-8add41131618-512", bio: "", password_digest: "789")
+User.create!(name: "Brandon", image_url: "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png", bio: "", password_digest: "012")
+User.create!(name: "Carlos", image_url: "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png", bio: "", password_digest: "013")
+User.create!(name: "Dana", image_url: "https://ca.slack-edge.com/T02MD9XTF-U03M9TLCLUV-0b1a97645b87-512", bio: "", password_digest: "014")
+User.create!(name: "Danny", image_url: "https://ca.slack-edge.com/T02MD9XTF-U03NT4ET9PB-d787932c7a8e-512", bio: "", password_digest: "015")
+User.create!(name: "George", image_url: "https://ca.slack-edge.com/T02MD9XTF-U03K2H3J9PX-a7141fbb10e8-512", bio: "", password_digest: "016")
+User.create!(name: "Jeff", image_url: "https://ca.slack-edge.com/T02MD9XTF-U03MRAMM36W-acef8ef16dbc-512", bio: "", password_digest: "017")
+User.create!(name: "Karl", image_url: "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png", bio: "", password_digest: "018")
+User.create!(name: "Kevin", image_url: "https://ca.slack-edge.com/T02MD9XTF-U03N2J4RGSU-3e7da930ea2b-512", bio: "", password_digest: "019")
+User.create!(name: "Lari", image_url: "https://ca.slack-edge.com/T02MD9XTF-U03L3LYEXNG-3761054a2da2-512", bio: "", password_digest: "020")
+User.create!(name: "Liz", image_url: "https://ca.slack-edge.com/T02MD9XTF-U03KELDBY8N-42dac4f656e0-512", bio: "", password_digest: "021")
+User.create!(name: "Marcus", image_url: "https://ca.slack-edge.com/T02MD9XTF-U03N2PG7STV-3d87abc24aeb-512", bio: "", password_digest: "022")
+User.create!(name: "Matt", image_url: "https://ca.slack-edge.com/T02MD9XTF-U03NCECQWSF-68af97c61b41-512", bio: "", password_digest: "023")
+User.create!(name: "Nathan", image_url: "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png", bio: "", password_digest: "024")
+User.create!(name: "Rachel", image_url: "https://ca.slack-edge.com/T02MD9XTF-U037TRBNKT8-40bc018bdf8d-512", bio: "", password_digest: "025")
+User.create!(name: "Shane", image_url: "https://ca.slack-edge.com/T02MD9XTF-U03HBV81B5W-114cbb19f1bd-512", bio: "", password_digest: "026")
+User.create!(name: "Sky", image_url: "https://ca.slack-edge.com/T02MD9XTF-U03NP2ARGA3-61af05d70829-512", bio: "", password_digest: "027")
+User.create!(name: "Thierry", image_url: "https://ca.slack-edge.com/T02MD9XTF-U03MVK298DQ-b975caf76856-512", bio: "", password_digest: "028")
+User.create!(name: "Tommy", image_url: "https://ca.slack-edge.com/T02MD9XTF-U03MU75JLAC-c32947438112-512", bio: "", password_digest: "029")
+User.create!(name: "Tsering", image_url: "https://ca.slack-edge.com/T02MD9XTF-U03PC3BE7L2-e5396aec64fc-512", bio: "", password_digest: "030")
+User.create!(name: "Zak", image_url: "https://ca.slack-edge.com/T02MD9XTF-U03NWVA19T8-27903ad4f9d2-512", bio: "", password_digest: "031")
+
+Genre.create(genre: "Action")
+Genre.create(genre: "Classic")
+Genre.create(genre: "Comedy")
+Genre.create(genre: "Documentary")
+Genre.create(genre: "Drama")
+Genre.create(genre: "Horror")
+Genre.create(genre: "International")
+Genre.create(genre: "Romance")
+Genre.create(genre: "Science Fiction")
+Genre.create(genre: "Thriller")
+
+GenreLike.create(user_id: 1, genre_id: 1)
+GenreLike.create(user_id: 1, genre_id: 2)
+GenreLike.create(user_id: 2, genre_id: 3)
+GenreLike.create(user_id: 2, genre_id: 4)
+GenreLike.create(user_id: 2, genre_id: 5)
+GenreLike.create(user_id: 3, genre_id: 6)
+GenreLike.create(user_id: 3, genre_id: 7)
+GenreLike.create(user_id: 4, genre_id: 8)
+GenreLike.create(user_id: 4, genre_id: 9)
+GenreLike.create(user_id: 5, genre_id: 10)
+GenreLike.create(user_id: 5, genre_id: 1)
+GenreLike.create(user_id: 6, genre_id: 2)
+GenreLike.create(user_id: 6, genre_id: 3)
+GenreLike.create(user_id: 7, genre_id: 4)
+GenreLike.create(user_id: 7, genre_id: 8)
+GenreLike.create(user_id: 8, genre_id: 7)
+GenreLike.create(user_id: 8, genre_id: 6)
+GenreLike.create(user_id: 9, genre_id: 6)
+GenreLike.create(user_id: 9, genre_id: 8)
+GenreLike.create(user_id: 9, genre_id: 10)
+GenreLike.create(user_id: 10, genre_id: 9)
+GenreLike.create(user_id: 10, genre_id: 2)
+GenreLike.create(user_id: 11, genre_id: 1)
+GenreLike.create(user_id: 11, genre_id: 4)
+GenreLike.create(user_id: 12, genre_id: 4)
+GenreLike.create(user_id: 12, genre_id: 1)
+GenreLike.create(user_id: 13, genre_id: 8)
+GenreLike.create(user_id: 13, genre_id: 7)
+GenreLike.create(user_id: 14, genre_id: 10)
+GenreLike.create(user_id: 14, genre_id: 1)
+GenreLike.create(user_id: 15, genre_id: 2)
+GenreLike.create(user_id: 15, genre_id: 3)
+GenreLike.create(user_id: 16, genre_id: 4)
+GenreLike.create(user_id: 16, genre_id: 6)
+GenreLike.create(user_id: 17, genre_id: 6)
+GenreLike.create(user_id: 17, genre_id: 8)
+GenreLike.create(user_id: 18, genre_id: 10)
+GenreLike.create(user_id: 18, genre_id: 2)
+GenreLike.create(user_id: 19, genre_id: 3)
+GenreLike.create(user_id: 19, genre_id: 5)
+GenreLike.create(user_id: 20, genre_id: 5)
+GenreLike.create(user_id: 20, genre_id: 8)
+GenreLike.create(user_id: 21, genre_id: 7)
+GenreLike.create(user_id: 21, genre_id: 1)
+GenreLike.create(user_id: 22, genre_id: 10)
+GenreLike.create(user_id: 22, genre_id: 9)
+GenreLike.create(user_id: 23, genre_id: 6)
+GenreLike.create(user_id: 23, genre_id: 5)
+
+Match.create(user_id: 1, liked_user_id: 5)
+Match.create(user_id: 2, liked_user_id: 11)
+Match.create(user_id: 3, liked_user_id: 23)
+Match.create(user_id: 4, liked_user_id: 7)
+Match.create(user_id: 5, liked_user_id: 9)
+
+
+puts "Done seeding the stuff!"
+
+
