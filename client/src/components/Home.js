@@ -17,7 +17,7 @@ function Home() {
                           <form>
                             <p>Please login to your account</p>
                               <div class="form-outline mb-4">
-                                <input type="email" id="form2Example11" class="form-control"
+                                <input type="name" id="form2Example11" class="form-control"
                                   placeholder="Username" />
                                     <label class="form-label" for="form2Example11" style={{color: "#F6C6BF"}}>Username</label>
                                     </div>
