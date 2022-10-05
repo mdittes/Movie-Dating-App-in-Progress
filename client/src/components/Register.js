@@ -21,7 +21,7 @@ function Register() {
                 </span>
               </div>
               <div className="form-group mt-3">
-                <label>Full Name</label>
+                <label>Username</label>
                 <input
                   type="name"
                   className="form-control mt-1"
@@ -53,10 +53,11 @@ function Register() {
                 />
               </div>
               <div className="d-grid gap-2 mt-3">
-                <button type="submit" style={{backgroundColor: "#529F8C", color: "#F6C6BF" }}>
-                  Submit
-                </button>
+              <button class="btn btn-default" style={{backgroundColor: "#529F8C", color: "#F6C6BF" }} type="submit" >Submit</button>
               </div>
+              <p className="text-center mt-2">
+                Forgot <a href="#">password?</a>
+              </p>
             </div>
           </form>
         </div>
