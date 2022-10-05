@@ -35,6 +35,38 @@ function Home() {
 
                     </form>
 
+  if (authMode === "signin") {
+    return (
+      <div className="Auth-form-container">
+        <form className="Auth-form">
+          <div className="Auth-form-content">
+            <h3 className="Auth-form-title">Sign In</h3>
+            <div className="text-center">
+              Not registered yet?{" "}
+              <span className="link-primary" style={{cursor:'pointer'}} onClick={changeAuthMode}>
+                Sign Up
+              </span>
+            </div>
+            <div className="form-group mt-3">
+              <label>Username</label>
+              <input
+                type="name"
+                className="form-control mt-1"
+                placeholder="Name"
+              />
+            </div>
+            <div className="form-group mt-3">
+              <label>Password</label>
+              <input
+                type="password"
+                className="form-control mt-1"
+                placeholder="Enter password"
+              />
+            </div>
+            <div className="d-grid gap-2 mt-3">
+              <button style={{backgroundColor: "#529F8C", color: "#F6C6BF" }} type="submit">
+                Submit
+              </button>
                   </div>
                 </div>
                 <div class="col-lg-6 d-flex align-items-center gradient-custom-2" style={{backgroundColor: "#F6C6BF"}}>

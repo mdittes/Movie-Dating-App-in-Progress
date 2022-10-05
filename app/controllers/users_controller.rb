@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
-    before_action :authorize
+    skip_before_action :authorize, only: [:create]
 
-    # def index 
-    #     render json: User.all
-    # end
+    def index 
+        render json: User.all
+    end
 
     def show 
         user = User.find_by(id: session[:user_id])
@@ -39,10 +39,6 @@ class UsersController < ApplicationController
 
     def user_params
         params.permit(:name, :image_url, :bio, :password, :password_confirmation)
-    end
-
-    def authorize
-        return render json: {error: "Not authorized"}, status: :unauthorized unless session.include? :user_id
     end
 
 end
