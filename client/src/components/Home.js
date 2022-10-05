@@ -5,13 +5,13 @@ import {useNavigate} from 'react-router-dom'
 function Home() {
 
   const navigate = useNavigate();
+
   
-  function handleClick(e) {
-    const routeChange = () => {
-      let path = '/Register';
-      navigate(path);
-    }
+  const routeChange = () => {
+    let path = '/Register';
+    navigate(path);
   }
+  
 
   return (
     <section class="h-100 gradient-form" background-color="#eee;">
@@ -40,7 +40,7 @@ function Home() {
                                       <button class="btn btn-default" style={{backgroundColor: "#F6C6BF", color: "#529F8C" }} type="submit" >Log In</button>
                                       </div>
                                     <div class="d-flex align-items-center justify-content-center pb-4">
-                                      <button onClick={handleClick} type="button" class="btn btn-default" style={{backgroundColor: "#F6C6BF", color: "#529F8C" }} >Create Account</button>
+                                      <button onClick={routeChange} type="button" class="btn btn-default" style={{backgroundColor: "#F6C6BF", color: "#529F8C" }} >Create Account</button>
                                       </div>
                           </form>
                     </div>
