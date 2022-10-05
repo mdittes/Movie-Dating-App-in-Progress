@@ -5,6 +5,7 @@ import {useNavigate} from 'react-router-dom'
 function Login(  ) {
     let [authMode, setAuthMode] = useState("signin")
     const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
 
     const navigate = useNavigate();
     const routeChange = () => {
@@ -18,13 +19,15 @@ function Login(  ) {
 
     function handleSubmit(e) {
       e.preventDefault();
-      fetch("http://localhost:4000/login", {
+      fetch("http://localhost:3000/login", {
         method: "POST",
-        mode: 'no-cors',
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({username}),
+        body: JSON.stringify({
+          name: username,
+          password: password
+        }),
       })
       .then(res => res.json())
       .then((user) => console.log(user))
@@ -44,18 +47,19 @@ function Login(  ) {
                   className="form-control mt-1"
                   placeholder="Name"
                   onChange={(e) => setUsername(e.target.value)}
-                />
+                  />
               </div>
               <div className="form-group mt-3">
                 <label>Password</label>
                 <input
                   type="password"
                   className="form-control mt-1"
+                  onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter password"
                 />
               </div>
               <div className="d-grid gap-2 mt-3">
-              <button class="btn btn-default" style={{backgroundColor: "#529F8C", color: "#F6C6BF" }} type="submit" onClick={routeChange} >Submit</button>
+              <button class="btn btn-default" style={{backgroundColor: "#529F8C", color: "#F6C6BF" }} type="submit"  >Submit</button>
               </div>
               <p className="text-center mt-2">
                 Forgot <a href="#">password?</a>
