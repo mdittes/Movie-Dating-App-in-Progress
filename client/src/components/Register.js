@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from "react"
-// import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import '../styled/Register.css'
 
 function Register() {
@@ -10,11 +10,11 @@ function Register() {
     setAuthMode(authMode === "signin" ? "signup" : "signin")
   }
 
-  // const navigate = useNavigate();
-  //   const routeChange = () => {
-  //     let path = '/Profile';
-  //     navigate(path);
-  //   }
+  const navigate = useNavigate();
+    const routeChange = () => {
+      let path = '/Profile';
+      navigate(path);
+    }
 
   if (authMode === "signin") {
     return (
@@ -61,8 +61,8 @@ function Register() {
                 />
               </div>
               <div className="d-grid gap-2 mt-3">
-              <button class="btn btn-default" style={{backgroundColor: "#529F8C", color: "#F6C6BF" }} type="submit" >Submit</button>
-              {/* <button class="btn btn-default" style={{backgroundColor: "#529F8C", color: "#F6C6BF" }} type="submit" onClick={routeChange} >Submit</button> */}
+              {/* <button class="btn btn-default" style={{backgroundColor: "#529F8C", color: "#F6C6BF" }} type="submit" >Submit</button> */}
+              <button class="btn btn-default" style={{backgroundColor: "#529F8C", color: "#F6C6BF" }} type="submit" onClick={routeChange} >Submit</button>
               </div>
               <p className="text-center mt-2">
                 Forgot <a href="#">password?</a>
