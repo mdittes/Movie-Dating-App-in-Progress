@@ -1,5 +1,5 @@
 import React from 'react';
-import './Genres.css'
+import '../styled/Genres.css'
 
 function Genres() {
   return (
