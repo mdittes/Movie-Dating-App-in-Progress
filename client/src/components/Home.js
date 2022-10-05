@@ -1,7 +1,18 @@
 import React from 'react'
 import { useState } from "react"
+import {useNavigate} from 'react-router-dom'
 
 function Home() {
+
+  const navigate = useNavigate();
+  
+  function handleClick(e) {
+    const routeChange = () => {
+      let path = '/Register';
+      navigate(path);
+    }
+  }
+
   return (
     <section class="h-100 gradient-form" background-color="#eee;">
       <div class="container py-5 h-100" >
@@ -29,7 +40,7 @@ function Home() {
                                       <button class="btn btn-default" style={{backgroundColor: "#F6C6BF", color: "#529F8C" }} type="submit" >Log In</button>
                                       </div>
                                     <div class="d-flex align-items-center justify-content-center pb-4">
-                                      <button type="button" class="btn btn-default" style={{backgroundColor: "#F6C6BF", color: "#529F8C" }} >Create Account</button>
+                                      <button onClick={handleClick} type="button" class="btn btn-default" style={{backgroundColor: "#F6C6BF", color: "#529F8C" }} >Create Account</button>
                                       </div>
                           </form>
                     </div>
@@ -41,7 +52,7 @@ function Home() {
                                 <h4 class="mb-4" style={{textAlignVertical: "center",textAlign: "center"}} >Welcome to Reel Connections</h4>
                                   <p class="small mb-0" style={{textAlignVertical: "center",textAlign: "center"}} >Here at Reel Connections, we're here to help you find a partner to watch movies with!
                                   If you need someone to snuggle up with during those cozy Hallmark Christmas movies, or someone to share in your
-                                  pain as Michale Myers someone keeps finding was to come back and kill some more, check us out! We're here to help
+                                  pain as Michael Myers keeps finding ways to come back and kill some more, check us out! We're here to help
                                   you find your forever movie watching soulmate!  </p>
                   </div>
                 </div>
