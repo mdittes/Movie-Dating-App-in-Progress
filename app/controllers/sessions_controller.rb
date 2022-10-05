@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
 
     def create
         user = User.find_by(name: params[:name])
-        if user #& user.authenticate(params[:password])
+        if user #&.authenticate(params[:password])
             session[:user_id] = user.id
             render json: user, status: :created 
         else
@@ -15,5 +15,19 @@ class SessionsController < ApplicationController
         session.delete :user_id
         head :no_content
     end
+
+    private
+
+    def authenticate(name, password)
+        if (user.password == password)
+            return true    
+        else
+            return false
+        end
+    end
+
+    # def user_params
+    #     params.permit(:name, :password)
+    # end
 
 end
