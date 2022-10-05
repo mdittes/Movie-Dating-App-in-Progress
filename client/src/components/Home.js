@@ -21,9 +21,9 @@ function Home() {
               </span>
             </div>
             <div className="form-group mt-3">
-              <label>Email address</label>
+              <label>Username</label>
               <input
-                type="email"
+                type="name"
                 className="form-control mt-1"
                 placeholder="Name"
               />
